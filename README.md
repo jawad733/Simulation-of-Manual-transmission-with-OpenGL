@@ -3,4 +3,4 @@ Automobiles of today are equipped with manual or automatic transmissions. Here I
 
 The the repository contains the project folder of Code Blocks. Your can either open the project in Code blocks and then run the code or you can compile in terminal using the following.
 
-g++ <filename> -o gl -lGL -lGLU -lglut
+g++ [filename] -o gl -lGL -lGLU -lglut
