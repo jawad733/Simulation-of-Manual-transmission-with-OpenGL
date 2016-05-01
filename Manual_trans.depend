@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1461958418 source:/home/jawad733/Desktop/Manual_trans/main.cpp
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<string.h>
+
