@@ -1,5 +1,3 @@
-
-
 #include <math.h>
 #include <stdlib.h>
 #include <GL/glut.h>
@@ -892,8 +890,7 @@ main(int argc, char *argv[])
   }
   glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
 
-  glutInitWindowSize(700
-                     ,700);
+  glutInitWindowSize(700,700);
   glutInitWindowPosition(0,0);
   glutCreateWindow("Gears");
   createMenu();
