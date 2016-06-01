@@ -29,10 +29,7 @@ static GLfloat color1[4] = {0.5, 0.5, 0.5, 1.0};
 static GLfloat color2[4] = {0.3, 0.3, 0.3, 1.0};
 static GLfloat color3[4] = {0.5, 0.5, 0.5, 1.0};
 static GLfloat color9[4] = {0.25, 0.25, 0.25, 1.0};
-static GLfloat v[4][3]={{0.0,0.0,1.0},
-                {0.0,0.942809,-0.33333},
-                {-0.816497,-0.471405,-0.33333},
-                {0.816497,-0.471405,-0.33333}};
+static void idle(void);
 
 void menu(int option)
 {
@@ -45,6 +42,15 @@ void menu(int option)
     {
         gearPressed = 1;
         menuVal=option;
+        if(menuVal == 6)
+        {
+            glutIdleFunc(idle);
+            menuVal = prevVal;
+        }
+        if(menuVal == 7)
+        {
+            glutIdleFunc(NULL);
+        }
     }
     glutPostRedisplay();
 }
@@ -57,6 +63,8 @@ void createMenu()
     glutAddMenuEntry("GEAR 3",3);
     glutAddMenuEntry("GEAR 4",4);
     glutAddMenuEntry("NEUTRAL",5);
+    glutAddMenuEntry("START",6);
+    glutAddMenuEntry("STOP",7);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
 
@@ -88,7 +96,7 @@ gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat width,
 
       da = 2.0 * M_PI / teeth / 4.0;
 
-      glShadeModel(GL_FLAT);
+      //glShadeModel(GL_FLAT);
 
       glNormal3f(0.0, 0.0, 1.0);
 
@@ -785,14 +793,14 @@ static void init(void)
   gear10 = glGenLists(1);
   glNewList(gear10, GL_COMPILE);
   glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color5);
-  gear(0.5, 2.0, 1.5, 20, 0.5);
+  gear(0.5, 2.0, 1.5, 15, 0.5);
   glEndList();
 
   //Input Shaft Gear
   gear6 = glGenLists(1);
   glNewList(gear6, GL_COMPILE);
   glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color7);
-  gear(0.5, 2.4, 1.5, 20, 0.7);
+  gear(0.5, 2.4, 1.5, 15, 0.7);
   glEndList();
 
   //attach

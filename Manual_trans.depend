@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1462113701 source:/home/jawad733/Desktop/Manual_trans/main.cpp
+1463490657 source:/home/jawad733/Desktop/Manual_trans/main.cpp
 	<math.h>
 	<stdlib.h>
 	<GL/glut.h>
